@@ -4,6 +4,7 @@
             <h5>Skills</h5>
             <div class="col s6">
                 <span v-for="skill in skills" v-bind:key="skill.id" class="chip">
+                    <fa-icon :icon="['fab', skill.skill_icon]" />
                     {{skill.skill_name}}
                 </span>
             </div>
@@ -32,6 +33,7 @@
                         'skill_id' : doc.data().skill_id,
                         'skill_name' : doc.data().skill_name,
                         'skill_type' : doc.data().skill_type,
+                        'skill_icon' : doc.data().skill_icon,
                     }
                     this.skills.push(data)
                 })
