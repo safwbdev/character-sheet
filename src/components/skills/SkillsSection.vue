@@ -2,9 +2,9 @@
     <div class="section">
         <div class="row">
             <h5>Skills</h5>
-            <div class="col s6">
+            <div class="col s12">
                 <span v-for="skill in skills" v-bind:key="skill.id" class="chip">
-                    <fa-icon :icon="['fab', skill.skill_icon]" />
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
                     {{skill.skill_name}}
                 </span>
             </div>
@@ -33,11 +33,12 @@
                         'skill_id' : doc.data().skill_id,
                         'skill_name' : doc.data().skill_name,
                         'skill_type' : doc.data().skill_type,
-                        'skill_icon' : doc.data().skill_icon,
+                        'skill_icon' : doc.data().skill_icon.split("::"),
                     }
                     this.skills.push(data)
                 })
-            }) 
+            })
+            console.log('lol')
         }
     }
 </script>
