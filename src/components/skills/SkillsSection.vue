@@ -1,9 +1,35 @@
 <template>
     <div class="section">
         <div class="row">
-            <h5>Skills</h5>
+            <h4>Skills</h4>
             <div class="col s12">
-                <span v-for="skill in skills" v-bind:key="skill.id" class="chip">
+                <h6>Areas of Expertise</h6>
+                <span v-for="skill in essentail" v-bind:key="skill.id" class="chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                    {{skill.skill_name}}
+                </span>
+                <h6>Technical</h6>
+                <span v-for="skill in technical" v-bind:key="skill.id" class="chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                    {{skill.skill_name}}
+                </span>
+                <h6>Frameworks & Libraries</h6>
+                <span v-for="skill in frameworks" v-bind:key="skill.id" class="chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                    {{skill.skill_name}}
+                </span>
+                <h6>Database</h6>
+                <span v-for="skill in database" v-bind:key="skill.id" class="chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                    {{skill.skill_name}}
+                </span>
+                <h6>Content Mangement Systems</h6>
+                <span v-for="skill in cms" v-bind:key="skill.id" class="chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                    {{skill.skill_name}}
+                </span>
+                <h6>Operating Systems</h6>
+                <span v-for="skill in os" v-bind:key="skill.id" class="chip">
                     <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
                     {{skill.skill_name}}
                 </span>
@@ -21,7 +47,14 @@
         },
         data() {
             return {
-                skills: [],
+                technical: [],
+                essentail: [],
+                frameworks: [],
+                database: [],
+                cms: [],
+                tools: [],
+                design: [],
+                os: [],
             }
         },
         created () {
@@ -35,10 +68,33 @@
                         'skill_type' : doc.data().skill_type,
                         'skill_icon' : doc.data().skill_icon.split("::"),
                     }
-                    this.skills.push(data)
+                    switch(doc.data().skill_type) {
+                        case "Essentials":
+                            this.essentail.push(data);
+                            break;
+                        case "Technical":
+                            this.technical.push(data);
+                            break;
+                        case "Framework":
+                            this.frameworks.push(data);
+                            break;
+                        case "Database":
+                            this.database.push(data);
+                            break;
+                        case "CMS":
+                            console.log(data);
+                            this.cms.push(data);
+                            break;
+                        case "Tool":
+                            this.tools.push(data);
+                            break;
+                        case "OS":
+                            this.os.push(data);
+                            break;
+                        }
+                        
                 })
             })
-            console.log('lol')
         }
     }
 </script>
