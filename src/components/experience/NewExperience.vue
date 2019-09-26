@@ -33,7 +33,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="work_desc" required>
+                        <textarea v-model="work_desc" required></textarea>
                         <label>Description</label>
                     </div>
                 </div>
