@@ -2,14 +2,10 @@
     <div class="section">
         <h5>Work Experience</h5>
         <div class="row">
-            <div 
-                v-for="work in experience" 
-                v-bind:key="work.id"
-                class="row col l6">
-                <h6>{{work.work_name}}</h6>
-                <div>{{work.work_start}} - {{work.work_end}}</div>
-                <div>{{work.work_position}}</div>
-                <div>{{work.work_desc}}</div>
+            <div v-for="work in experience" v-bind:key="work.id" class="row col xl6 l6 m6 s12">
+                <div>{{work.work_position}} | {{work.work_start}} - {{work.work_end}}</div>
+                <div>{{work.work_name}} | {{work.work_location}}</div>
+                <div>{{work.work_desc}}</div> 
             </div>
         </div>
     </div>
@@ -28,7 +24,7 @@
             }
         },
         created () {
-            db.collection('experience').orderBy('work_id').get().then(querysnapshot => {
+            db.collection('experience').orderBy('work_end', 'desc').get().then(querysnapshot => {
                 querysnapshot.forEach(doc => {
                     // console.log(doc.id);
                     const data = {
@@ -39,6 +35,7 @@
                         'work_start' : doc.data().work_start,
                         'work_end' : doc.data().work_end,
                         'work_desc' : doc.data().work_desc,
+                        'work_location' : doc.data().work_location,
                     }
                     this.experience.push(data)
                 })

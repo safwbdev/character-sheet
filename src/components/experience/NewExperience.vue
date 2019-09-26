@@ -37,6 +37,12 @@
                         <label>Description</label>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" v-model="work_location" required>
+                        <label>Location</label>
+                    </div>
+                </div>
                 <button type="submit" class="btn">Submit</button>
                 <router-link to="/dashboard" class="btn">Cancel</router-link>
             </form>
@@ -56,6 +62,7 @@
                 work_desc: null,
                 work_start: null,
                 work_end: null,
+                work_location: null,
 
             }
         },
@@ -78,6 +85,7 @@
                     work_desc: this.work_desc,
                     work_start: this.work_start,
                     work_end: this.work_end,
+                    work_location: this.work_location,
                 })
                 .then(docRef => this.$router.push('/'))
                 .catch(error => console.log(err))

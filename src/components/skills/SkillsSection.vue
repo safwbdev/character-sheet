@@ -4,33 +4,33 @@
             <h4>Skills</h4>
             <div class="col s12">
                 <h6>Areas of Expertise</h6>
-                <span v-for="skill in essentail" v-bind:key="skill.id" class="chip">
-                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                <span v-for="skill in essentail" v-bind:key="skill.id" class=" blue lighten-3 chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
                 <h6>Technical</h6>
-                <span v-for="skill in technical" v-bind:key="skill.id" class="chip">
-                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                <span v-for="skill in technical" v-bind:key="skill.id" class="lime chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
                 <h6>Frameworks & Libraries</h6>
-                <span v-for="skill in frameworks" v-bind:key="skill.id" class="chip">
-                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                <span v-for="skill in frameworks" v-bind:key="skill.id" class="yellow chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
                 <h6>Database</h6>
-                <span v-for="skill in database" v-bind:key="skill.id" class="chip">
-                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                <span v-for="skill in database" v-bind:key="skill.id" class="orange lighten-2 chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
                 <h6>Content Mangement Systems</h6>
-                <span v-for="skill in cms" v-bind:key="skill.id" class="chip">
-                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                <span v-for="skill in cms" v-bind:key="skill.id" class="red lighten-2 chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
                 <h6>Operating Systems</h6>
-                <span v-for="skill in os" v-bind:key="skill.id" class="chip">
-                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" />
+                <span v-for="skill in os" v-bind:key="skill.id" class=" purple lighten-4 chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
             </div>

@@ -5,7 +5,7 @@
             <div 
                 v-for="edu in education" 
                 v-bind:key="edu.id" 
-                class="row col s6">
+                class="row col xl6 l6 m6 s12">
                 <h6>{{edu.edu_name}}</h6>
                 <span class="bold">{{edu.edu_field}}</span>
                 <div>{{edu.edu_start}} - {{edu.edu_end}}</div>
@@ -27,7 +27,7 @@
             }
         },
         created () {
-            db.collection('education').orderBy('edu_id').get().then(querysnapshot => {
+            db.collection('education').orderBy('edu_end', 'desc').get().then(querysnapshot => {
                 querysnapshot.forEach(doc => {
                     // console.log(doc.id);
                     const data = {

@@ -5,7 +5,7 @@
         </li>
         <li v-for="work in experience" v-bind:key="work.id" class="collection-item">
             <div class="chip">{{work.work_name}}</div>
-            {{work.work_id}} : {{work.work_position}} : {{work.work_start}} - {{work.work_end}} | {{work.work_desc}}
+            {{work.work_id}} : {{work.work_position}} : {{work.work_start}} - {{work.work_end}} | {{work.work_desc}} | {{work.work_location}}
             <router-link class="secondary-content" v-bind:to="{name: 'view-experience',params: {work_id: work.work_id}}">
                 <i class="fa fa-eye"></i>
             </router-link>
@@ -43,6 +43,7 @@
                         'work_start' : doc.data().work_start,
                         'work_end' : doc.data().work_end,
                         'work_desc' : doc.data().work_desc,
+                        'work_location' : doc.data().work_location,
                     }
                     this.experience.push(data)
                 })

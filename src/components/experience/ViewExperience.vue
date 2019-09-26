@@ -6,6 +6,7 @@
             <li class="collection-item">Position: {{work_position}}</li>
             <li class="collection-item">Duration: {{work_start}} - {{work_end}}</li>
             <li class="collection-item">Description: {{work_desc}}</li>
+            <li class="collection-item">Location: {{work_location}}</li>
         </ul>
         <router-link to="/dashboard" class="btn grey">Back</router-link>
         <Button @click="deleteEmployee" to="/" class="btn red">Delete</Button>
@@ -45,6 +46,7 @@
                         vm.work_start = doc.data().work_start
                         vm.work_end = doc.data().work_end
                         vm.work_position = doc.data().work_position
+                        vm.work_location = doc.data().work_location
                     })
                 })
             })
