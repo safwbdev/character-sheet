@@ -2,7 +2,7 @@
     <div class="section">
         <h5>Work Experience</h5>
         <div class="row">
-            <div v-for="work in experience" v-bind:key="work.id" class="row col xl6 l6 m6 s12">
+            <div v-for="work in experience" v-bind:key="work.id" class="row col xl12 l6 m12 s12">
                 <div>{{work.work_position}} | {{work.work_start}} - {{work.work_end}}</div>
                 <div>{{work.work_name}} | {{work.work_location}}</div>
                 <div>{{work.work_desc}}</div> 
@@ -13,7 +13,8 @@
 
 
 <script>
-    import db from './../firebase/firebaseInit'
+    import db from './../firebase/firebaseInit';
+    import moment from 'moment';
     export default {
         props:{
             title: String
@@ -32,8 +33,8 @@
                         'work_id' : doc.data().work_id,
                         'work_name' : doc.data().work_name,
                         'work_position' : doc.data().work_position,
-                        'work_start' : doc.data().work_start,
-                        'work_end' : doc.data().work_end,
+                        'work_start' : moment(doc.data().work_start).format('MMMM YYYY'),
+                        'work_end' : moment(doc.data().work_end).format('MMMM YYYY'),
                         'work_desc' : doc.data().work_desc,
                         'work_location' : doc.data().work_location,
                     }
