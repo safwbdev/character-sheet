@@ -37,7 +37,19 @@
         </div>
     </div>
 </template>
-
+<style scoped>
+.section{
+    padding: 0;
+    /* border:1px solid red; */
+    text-align: center;
+}
+.section h4{
+    padding: 0;
+}
+.section h6{
+    padding: 20px 0 10px 0;
+}
+</style>
 
 <script>
     import db from './../firebase/firebaseInit'

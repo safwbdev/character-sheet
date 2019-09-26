@@ -4,9 +4,15 @@
         <div class="divider"></div>
         <SkillsSection />
         <div class="divider"></div>
-        <EducationSection />
+        <div class="row">
+            <div class="row col xl6 l6 m12 s12">
+                <ExperienceSection />
+            </div>
+            <div class="row col xl6 l6 m12 s12">
+                <EducationSection />
+            </div>
+        </div>
         <div class="divider"></div>
-        <ExperienceSection />
     </div>
 </template>
 

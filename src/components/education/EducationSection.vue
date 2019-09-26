@@ -5,11 +5,13 @@
             <div 
                 v-for="edu in education" 
                 v-bind:key="edu.id" 
-                class="row col xl6 l6 m6 s12">
-                <h6>{{edu.edu_name}}</h6>
+                class="row col xl12 l12 m12 s12">
+                <!-- <h6>{{edu.edu_name}}</h6>
                 <span class="bold">{{edu.edu_field}}</span>
                 <div>{{edu.edu_start}} - {{edu.edu_end}}</div>
-                <div>{{edu.edu_desc}}</div>
+                <div>{{edu.edu_desc}}</div> -->
+                <div>{{edu.edu_end}} | {{edu.edu_field}}</div>
+                <div>{{edu.edu_name}} | {{edu.edu_desc}}</div>
             </div>
         </div>
     </div>
